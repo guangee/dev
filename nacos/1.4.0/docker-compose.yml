@@ -1,7 +1,9 @@
 version: '3'
 services:
   nacos:
-    image: registry.cn-beijing.aliyuncs.com/guanweiming/nacos:1.40
+    build:
+      context: ./
+    image: nacos:1.40
     restart: always
     container_name: nacos
     ports:
