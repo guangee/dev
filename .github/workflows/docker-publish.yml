@@ -28,11 +28,8 @@ jobs:
 
       - name: Run tests
         run: |
-          if [ -f nacos/1.4.0/docker-compose.yml ]; then
-            docker-compose --file nacos/1.4.0/docker-compose.yml build
-          else
-            docker build . --file Dockerfile
-          fi
+          # 打包docker-compose
+          docker-compose --file nacos/1.4.0/docker-compose.yml build
 
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
