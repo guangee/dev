@@ -28,7 +28,7 @@ services:
       MYSQL_USER: nacos
       MYSQL_PASSWORD: nacos
     ports:
-      - 3307:3306
+      - 3306:3306
     volumes:
       - ./mysql/data/:/var/lib/mysql
       - ./mysql/conf/:/etc/mysql/conf.d/
