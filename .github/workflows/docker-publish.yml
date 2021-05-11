@@ -67,6 +67,7 @@ jobs:
 
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
+          echo "${{ secrets.DOCKER_USERNAME }}"
 
           docker-compose --file nacos/1.4.0/docker-compose.yml build nacos
           docker-compose --file nacos/1.4.0/docker-compose.yml push nacos
