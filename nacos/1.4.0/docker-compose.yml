@@ -3,7 +3,7 @@ services:
   nacos:
     build:
       context: ./
-    image: nacos:1.4.0
+    image: docker.pkg.github.com/guangee/dev/nacos:1.4.0
     restart: always
     container_name: nacos
     ports:
