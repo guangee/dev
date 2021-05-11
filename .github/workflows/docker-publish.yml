@@ -28,8 +28,8 @@ jobs:
 
       - name: Run tests
         run: |
-          if [ -f docker-compose.test.yml ]; then
-            docker-compose --file docker-compose.test.yml build
+          if [ -f nacos/1.4.0/docker-compose.yml ]; then
+            docker-compose --file nacos/1.4.0/docker-compose.yml build
             docker-compose --file docker-compose.test.yml run sut
           else
             docker build . --file Dockerfile
