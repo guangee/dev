@@ -19,11 +19,17 @@ jobs:
     if: github.event_name == 'push'
 
     steps:
-      - name: 登陆docker
+      - uses: actions/checkout@v2
+
+      - name: Build image
+        run: docker images
+
+      - name: Log into registry
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login docker.io -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
-      - name: 构建
+      - name: Push image
         run: |
+          echo "构建"
           docker build -t guangee/nacos:1.4.0 nacos/1.4.0/
           docker push guangee/nacos:1.4.0
 #          docker-compose --file nacos/1.4.0/docker-compose.yml build nacos
