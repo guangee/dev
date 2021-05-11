@@ -73,4 +73,4 @@ jobs:
           echo VERSION=$VERSION
 
           docker-compose --file nacos/1.4.0/docker-compose.yml build
-          docker-compose --file nacos/1.4.0/docker-compose.yml push
+          docker-compose --file nacos/1.4.0/docker-compose.yml push nacos
