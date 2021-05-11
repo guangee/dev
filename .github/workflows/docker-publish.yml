@@ -29,7 +29,7 @@ jobs:
       - name: Run tests
         run: |
           # 打包docker-compose
-          docker-compose --file nacos/1.4.0/docker-compose.yml build
+          echo "没啥好测试的，直接进入下一步"
 
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
@@ -39,10 +39,6 @@ jobs:
 
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
-
-    permissions:
-      contents: read
-      packages: write
 
     steps:
       - uses: actions/checkout@v2
@@ -72,5 +68,5 @@ jobs:
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
 
-          docker-compose --file nacos/1.4.0/docker-compose.yml build
+          docker-compose --file nacos/1.4.0/docker-compose.yml build nacos
           docker-compose --file nacos/1.4.0/docker-compose.yml push nacos
