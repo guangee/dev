@@ -30,7 +30,6 @@ jobs:
         run: |
           if [ -f nacos/1.4.0/docker-compose.yml ]; then
             docker-compose --file nacos/1.4.0/docker-compose.yml build
-            docker-compose --file docker-compose.test.yml run sut
           else
             docker build . --file Dockerfile
           fi

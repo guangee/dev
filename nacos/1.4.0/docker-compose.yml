@@ -3,7 +3,7 @@ services:
   nacos:
     build:
       context: ./
-    image: nacos:1.40
+    image: nacos:1.4.0
     restart: always
     container_name: nacos
     ports:
