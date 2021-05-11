@@ -3,6 +3,7 @@ RUN echo "Asia/Shanghai" > /etc/timezone
 RUN apt install wget unzip -y
 WORKDIR /root
 ADD https://github.com/alibaba/nacos/releases/download/1.4.0/nacos-server-1.4.0.tar.gz /root
+RUN ls
 #RUN wget https://github.com/alibaba/nacos/releases/download/1.4.0/nacos-server-1.4.0.zip && unzip nacos-server-1.4.0.zip && rm nacos-server-1.4.0.zip
 #ADD conf /root/nacos/conf/
 EXPOSE 8848
