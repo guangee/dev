@@ -30,5 +30,7 @@ jobs:
       - name: Push image
         run: |
           echo "构建"
-          docker-compose --file nacos/1.4.0/docker-compose.yml build nacos
-          docker-compose --file nacos/1.4.0/docker-compose.yml push nacos
+          docker build -t guangee/nacos:1.4.0 nacos/1.4.0/
+          docker push guangee/nacos:1.4.0
+#          docker-compose --file nacos/1.4.0/docker-compose.yml build nacos
+#          docker-compose --file nacos/1.4.0/docker-compose.yml push nacos
