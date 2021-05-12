@@ -1,0 +1,1 @@
+java "${JAVA_OPTS}" -Dnacos.standalone=true -jar /root/nacos/target/nacos-server.jar --spring.config.additional-location=file:/root/nacos/conf/,classpath:/,classpath:/config/,file:./,file:./config/ --server.max-http-header-size=524288
