@@ -9,4 +9,5 @@ ADD application.properties /root/nacos/conf/application.properties
 ADD run.sh run.sh
 RUN chmod +x run.sh
 EXPOSE 8848
-CMD ["/bin/sh -c /root/run.sh"]
+#CMD ["/bin/sh -c /root/run.sh"]
+CMD ["java","-Xms256m", "-Xmx512m","-Xmn256m","-Dnacos.standalone=true","-jar","/root/nacos/target/nacos-server.jar","--spring.config.additional-location=file:/root/nacos/conf/,classpath:/,classpath:/config/,file:./,file:./config/","--server.max-http-header-size=524288"]
