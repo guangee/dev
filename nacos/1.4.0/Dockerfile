@@ -9,4 +9,4 @@ ADD application.properties /root/nacos/conf/application.properties
 ADD run.sh run.sh
 RUN chmod +x run.sh
 EXPOSE 8848
-CMD ["run.sh"]
+CMD ["/bin/sh -c /root/run.sh"]
