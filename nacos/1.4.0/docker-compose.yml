@@ -12,6 +12,9 @@ services:
       - db_name=nacos
       - db_username=nacos
       - db_password=nacos
+      - Xms=256
+      - Xmx=512
+      - Xmn=256
     depends_on:
       - mysql
 
