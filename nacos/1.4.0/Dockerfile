@@ -8,4 +8,4 @@ RUN wget https://github.com/alibaba/nacos/releases/download/1.4.0/nacos-server-1
 ADD application.properties /root/nacos/conf/application.properties
 ADD run.sh run.sh
 EXPOSE 8848
-CMD["/bin/sh -c run.sh"]
+CMD["run.sh"]
