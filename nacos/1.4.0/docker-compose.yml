@@ -12,9 +12,7 @@ services:
       - db_name=nacos
       - db_username=nacos
       - db_password=nacos
-      - Xms=256
-      - Xmx=512
-      - Xmn=256
+      - JAVA_OPTS="-Xms256m -Xmx512m -Xmn256m"
     depends_on:
       - mysql
 
