@@ -1,0 +1,26 @@
+version: '3'
+services:
+  db:
+    restart: always
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      TIME_ZONE: Asia/Shanghai
+      MYSQL_DATABASE: exam
+    ports:
+      - "3306:3306"
+    command: [
+      '--character-set-server=utf8mb4',
+      '--collation-server=utf8mb4_bin'
+    ]
+    volumes:
+      - /mnt/data/db:/var/lib/mysql
+      - /etc/localtime:/etc/localtime
+  nextcloud:
+    image: nextcloud:latest
+    container_name: nextcloud
+    ports:
+      - "20080:80"
+    volumes: 
+      - "/mnt/data/nextcloud:/data"
+    restart: always

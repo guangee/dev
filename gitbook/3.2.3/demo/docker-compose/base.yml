@@ -1,0 +1,34 @@
+version: '3'
+services:
+  db:
+    restart: always
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      TIME_ZONE: Asia/Shanghai
+      MYSQL_DATABASE: exam
+    ports:
+      - "3306:3306"
+    command: [
+      '--character-set-server=utf8mb4',
+      '--collation-server=utf8mb4_bin'
+    ]
+    volumes:
+      - /mnt/data/db:/var/lib/mysql
+      - /etc/localtime:/etc/localtime
+  minio:
+    image: minio/minio:latest
+    container_name: minio
+    ports:
+      - "9000:9000"
+    volumes: 
+      - "/mnt/data/oss:/data"
+    environment:
+      MINIO_ACCESS_KEY: "root"
+      MINIO_SECRET_KEY: "password"
+    command: server /data
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"

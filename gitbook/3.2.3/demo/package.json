@@ -1,0 +1,27 @@
+{
+  "name": "coding_springboot",
+  "version": "1.0.0",
+  "description": "本书由 [关哥](http://guange.top/)创建,记录SpringBoot使用经验",
+  "main": "index.js",
+  "dependencies": {
+    "gh-pages": "^1.2.0",
+    "gitbook-plugin-ace": "^0.3.2",
+    "gitbook-plugin-github": "^2.0.0",
+    "gitbook-plugin-search-pro": "^2.0.2",
+    "gitbook-plugin-sharing-plus": "^0.0.2",
+    "gitbook-plugin-sitemap-general": "0.1.0",
+    "gitbook-plugin-theme-official": "^2.1.1",
+    "gitbook-plugin-todo": "^0.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d _book"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.dev.tencent.com:zziaamor/blog.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

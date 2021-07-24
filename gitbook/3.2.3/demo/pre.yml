@@ -1,0 +1,51 @@
+#ingress
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: book
+  namespace: debug
+spec:
+  rules:
+    - host: book.dev.guanweiming.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: book
+              servicePort: 80
+---
+#service
+apiVersion: v1
+kind: Service
+metadata:
+  name: book
+  namespace: debug
+spec:
+  selector:
+    app: book
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book
+  namespace: debug
+spec:
+  selector:
+    matchLabels:
+      app: book
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: book
+    spec:
+      containers:
+        - name: pig
+          image: registry.cn-beijing.aliyuncs.com/guanweiming/tech:project_version
+          ports:
+            - containerPort: 80
