@@ -1,3 +1,3 @@
 git add .
 git commit -m "auto push"
-git push github master
+git push origin master
