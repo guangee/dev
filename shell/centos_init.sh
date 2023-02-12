@@ -40,5 +40,7 @@ echo "DNS1=114.114.114.114" >> /etc/sysconfig/network-scripts/ifcfg-ens192
 echo "DNS2=8.8.8.8" >> /etc/sysconfig/network-scripts/ifcfg-ens192
 
 
-
-
+# 关闭防火墙
+systemctl stop firewalld
+systemctl disable firewalld
+systemctl restart docker
